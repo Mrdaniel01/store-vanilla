@@ -4,7 +4,7 @@
   --primaryColor: #f09d51;
   --mainWhite: #fff;
   --mainBlack: #222;
-  --mainGrey: #ececec;
+  --mainGrey: #525252;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
 }
@@ -65,7 +65,7 @@ body {
 }
 .banner {
   text-align: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.863);
   display: inline-block;
   padding: 2rem;
 }
@@ -141,7 +141,9 @@ body {
 }
 .product-img {
   display: block;
-  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  
   min-height: 12rem;
   transition: var(--mainTransition);
 }
@@ -185,7 +187,7 @@ body {
   height: 100%;
   overflow: scroll;
   z-index: 3;
-  background: rgb(231, 226, 221);
+  background: rgb(255, 255, 255);
   padding: 1.5rem;
   transition: var(--mainTransition);
   transform: translateX(100%);  
