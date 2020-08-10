@@ -71,8 +71,7 @@ class UI {
       `;
     });
     productsDOM.innerHTML = result; //render of my items    
-  }  
-
+  } 
   getShowButtons(){    
     const buttonsShow = [...document.querySelectorAll('.show')];
     buttonsShow.forEach(buttonShow  => {
@@ -85,7 +84,6 @@ class UI {
       })
     })
   }
-  
   modalLogic(){
     closeModalBtn.addEventListener('click', closeModal(), false);
     
@@ -129,8 +127,6 @@ class UI {
     cartOverlay.classList.remove('transparentBcg');
     
   }
-  
-  
   getBagButtons(){//get all buttons in each product
     const buttons = [...document.querySelectorAll('.bag-btn')];
     buttons.forEach(button => {
@@ -161,8 +157,7 @@ class UI {
         });        
       }       
     });   
-  }
-  
+  }  
   setCartValues(cart){
     let tempTotal = 0;
     let itemsTotal = 0;
@@ -192,11 +187,11 @@ class UI {
     
     `;    
     cartContent.appendChild(div);
-  };
+  }
   showCart(){
     cartOverlay.classList.add('transparentBcg');
     cartDOM.classList.add('showCart');
-  };  
+  }  
   setupApp() {
     cart = Storage.getCart();
     this.setCartValues(cart);
@@ -208,7 +203,7 @@ class UI {
   }  
   populateCart(cart){
     cart.forEach(item => this.addCartItem(item));
-  };
+  }
   hideCart(){
     cartOverlay.classList.remove('transparentBcg');
     cartDOM.classList.remove('showCart');
@@ -319,14 +314,13 @@ document.addEventListener('DOMContentLoaded', () => {
     .getProducts()
     
     .then(products => {
-    ui.displayProducts(products)
+    ui.displayProducts(products);
     Storage.saveProducts(products);
   })
   .then(() => {
     ui.getBagButtons();
     ui.getShowButtons();
     ui.cartLogic();   
-    ui.modalLogic();   
-    //ui.createModal();   
+    ui.modalLogic();
   });
 });
