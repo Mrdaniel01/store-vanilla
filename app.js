@@ -73,14 +73,12 @@ class UI {
   getShowButtons(){    
     const buttonsShow = [...document.querySelectorAll('.show')];
     buttonsShow.forEach(buttonShow => {
+      let id = buttonShow.dataset.id;
       buttonShow.addEventListener('click', () => {
       this.showModal();
       this.modalLogic();
       })
     })
-  
-    //
-    
   }
   modalLogic(){
     closeModalBtn.addEventListener('click', closeModal(), false);

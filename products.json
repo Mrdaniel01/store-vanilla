@@ -4,7 +4,7 @@
       "sys": { "id": "1" },
       "fields": {
         "title": "Z490 Aorus Xtreme Waterforce",
-        "price": 10.99,
+        "price": 178.95,
         "image": { "fields": { "file": { "url": "./images/product-1.jpeg" } } }
       }
     },
@@ -12,7 +12,7 @@
       "sys": { "id": "2" },
       "fields": {
         "title": "B550 AORUS MASTER",
-        "price": 12.99,
+        "price": 226.99,
         "image": { "fields": { "file": { "url": "./images/product-2.jpeg" } } }
       }
     },
@@ -20,7 +20,7 @@
       "sys": { "id": "3" },
       "fields": {
         "title": "X399 GAMING PRO CARBONO AC",
-        "price": 12.99,
+        "price": 48.95,
         "image": { "fields": { "file": { "url": "./images/product-3.jpeg" } } }
       }
     },
@@ -28,7 +28,7 @@
       "sys": { "id": "4" },
       "fields": {
         "title": "MPG B550 GAMING EDGE WIFI",
-        "price": 22.99,
+        "price": 150.78,
         "image": { "fields": { "file": { "url": "./images/product-4.jpeg" } } }
       }
     },
@@ -36,7 +36,7 @@
       "sys": { "id": "5" },
       "fields": {
         "title": "Intel Core i7-9700K",
-        "price": 88.99,
+        "price": 299.99,
         "image": { "fields": { "file": { "url": "./images/product-5.jpeg" } } }
       }
     },
@@ -44,7 +44,7 @@
       "sys": { "id": "6" },
       "fields": {
         "title": "Procesador Intel Core i9-10900X",
-        "price": 32.99,
+        "price": 489.99,
         "image": { "fields": { "file": { "url": "./images/product-6.jpeg" } } }
       }
     },
@@ -52,7 +52,7 @@
       "sys": { "id": "7" },
       "fields": {
         "title": "AMD Ryzen 9 3900Xh",
-        "price": 45.99,
+        "price": 10.99,
         "image": { "fields": { "file": { "url": "./images/product-7.jpeg" } } }
       }
     },
@@ -60,7 +60,7 @@
       "sys": { "id": "8" },
       "fields": {
         "title": "AMD Ryzen Threadripper 3970X",
-        "price": 33.99,
+        "price": 80.55,
         "image": { "fields": { "file": { "url": "./images/product-8.jpeg" } } }
       }
     }
