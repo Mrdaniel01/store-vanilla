@@ -13,8 +13,11 @@ const cartOverlay = document.querySelector('.cart-overlay');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 const closeModalBtn = document.querySelector('.modal-close');
+const modalDisplay = document.querySelector('.modal-content');
 //cart
 let cart = [];
+//modal container
+let modalContainer = [];
 //buttons
 let buttonsDOM = [];
 
@@ -73,24 +76,56 @@ class UI {
   getShowButtons(){    
     const buttonsShow = [...document.querySelectorAll('.show')];
     buttonsShow.forEach(buttonShow => {
-      let id = buttonShow.dataset.id;
+      let id = buttonShow.dataset.id;      
       buttonShow.addEventListener('click', () => {
-      this.showModal();
-      this.modalLogic();
+      let modalItem = { ...Storage.getProduct(id), amount: 1};
+      modalContainer = [...modalContainer, modalItem];
+      this.showModal(modalItem);
+      this.modalLogic();    
       })
     })
   }
+  
   modalLogic(){
     closeModalBtn.addEventListener('click', closeModal(), false);
     
   }
-  showModal(){
+  showModal(item){
     modal.classList.add('showModal')
     cartOverlay.classList.add('transparentBcg');
+    
+
+    const div = document.createElement('div');
+    div.classList.add('modal-content');
+    div.innerHTML = 
+    `
+    <div class="modal-items">
+      <img class="modal-img" src=${item.image} alt="">
+      <ul class="modal-details">
+        <li>
+          <h3 class="modal-title">${item.title} </h3>
+        </li>
+        <li>
+          <p class="modal-description">Description</p>
+        </li>
+        <li>
+          <h4 class="modal-price">
+          ${item.price} 
+          </h4>
+        </li>
+      </ul> 
+    </div>
+    
+    `;    
+    modal.appendChild(div);
   }
   closeModal(){
+    modalContainer = [];
+    modal.removeChild()
+    console.log(modalContainer)
     modal.classList.remove('showModal')
     cartOverlay.classList.remove('transparentBcg');
+    
   }
   
   
@@ -223,7 +258,7 @@ class UI {
           cartContent.removeChild(lowerAmount.parentElement.parentElement);
           const buttons = [...document.querySelectorAll('.bag-btn')];
           buttons.forEach(button => {
-            if (parseInt(button.dataser.id) === id ){
+            if (parseInt(button.dataset.id) === id ){
               button.disabled = false;
               button.innerHTML = `<i class='fas fa-shopping-cart'></i> add to cart`;
             }
@@ -290,10 +325,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.getShowButtons();
     ui.cartLogic();   
     ui.modalLogic();   
+    //ui.createModal();   
   });
 });
-
-// if (event.target.classList.contains('show')){
-//   //modal.classList.add('showModal')
-//   console.log('this')
-// }

@@ -263,14 +263,12 @@ body {
 /* --------------- End of Cart ---------------- */
 /* ---------------  modal ---------------- */
 
-.modal {
+.modal{
   width: 80%;
   height: auto;
   background-color: var(--mainWhite);
   margin: 0 auto;
   padding: 2rem;
-  display: flex;
-  justify-content: space-evenly;
   position: fixed;
   top: 20%;
   left: 10%;
@@ -278,16 +276,32 @@ body {
   transition: var(--mainTransition);
   transform: translateX(150%);
 }
+.modal-content{
+  width: 100%;
+  display: flex;
+}
 
 .modal-img {
   width: 40%;
 }
 
-.modal-details {
+.modal-details{
   width: 40%;
   list-style: none;
   font-size: 1.5rem;
-  display: grid;
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-items {
+  width: 100%;
+  display: flex;
+}
+
+.modal-title,
+.modal-description {
+  margin-bottom: 1rem;
 }
 
 .showModal {
