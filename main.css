@@ -73,7 +73,7 @@ body {
   font-size: 3.4rem;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
-  margin-bottom: 3rem;
+  margin: 1rem 0;
 }
 .banner-btn {
   padding: 1rem 3rem;
@@ -261,3 +261,37 @@ body {
 }
 
 /* --------------- End of Cart ---------------- */
+/* ---------------  Banner ---------------- */
+
+.modal {
+  width: 80%;
+  height: auto;
+  border: 2px solid red;
+  background-color: var(--mainWhite);
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  transform: translateX(150%);
+}
+
+.modal-img {
+  width: 40%;
+}
+
+.modal-details {
+  width: 40%;
+  list-style: none;
+  font-size: 1.5rem;
+  display: grid;
+}
+
+.showModal {
+  transform: translateX(0);
+}
+
+
+/* ---------------  End of Banner ---------------- */

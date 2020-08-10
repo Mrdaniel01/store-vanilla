@@ -1,7 +1,9 @@
 //variables
 
+const modal = document.querySelector('.modal');
 const cartDOM = document.querySelector('.cart');
 const cartBtn = document.querySelector('.cart-btn');
+const productItem = document.querySelector('.product-img');
 const cartTotal = document.querySelector('.cart-total');
 const cartItems = document.querySelector('.cart-items');
 const clearCartBtn = document.querySelector('.clear-cart');
@@ -88,7 +90,7 @@ class UI {
           // display cart item
           this.addCartItem(cartItem);
           //show the cart
-          this.showCart();
+          this.showCart();          
         });
       }        
     }); 
@@ -215,7 +217,6 @@ class UI {
 }
 
 
-
 //local storage
 class Storage {
   static saveProducts(products){
@@ -239,8 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI()
   const products = new Products()
   //setup app
-  ui.setupApp();
-  
+  ui.setupApp(); 
+
   //get all products
   products
     .getProducts()
@@ -253,3 +254,4 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.cartLogic();
   });
 });
+
