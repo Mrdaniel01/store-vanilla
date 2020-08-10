@@ -1,5 +1,6 @@
 //variables
 
+const show = document.querySelector('.show')
 const modal = document.querySelector('.modal');
 const cartDOM = document.querySelector('.cart');
 const cartBtn = document.querySelector('.cart-btn');
@@ -11,6 +12,7 @@ const closeCartBtn = document.querySelector('.close-cart');
 const cartOverlay = document.querySelector('.cart-overlay');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
+const closeModalBtn = document.querySelector('.modal-close');
 //cart
 let cart = [];
 //buttons
@@ -55,6 +57,9 @@ class UI {
             <i class="fas fa-cart-plus"></i>
             Add to Cart 
           </button>
+          <button class="show" data-id=${product.id}>
+            show
+          </button>
         </div>
         <h3>${product.title}</h3>
         <h4>${product.price}</h4>
@@ -62,8 +67,35 @@ class UI {
       <!--end single product-->
       `;
     });
-    productsDOM.innerHTML = result; //render of my items
+    productsDOM.innerHTML = result; //render of my items    
+  }  
+
+  getShowButtons(){    
+    const buttonsShow = [...document.querySelectorAll('.show')];
+    buttonsShow.forEach(buttonShow => {
+      buttonShow.addEventListener('click', () => {
+      this.showModal();
+      this.modalLogic();
+      })
+    })
+  
+    //
+    
   }
+  modalLogic(){
+    closeModalBtn.addEventListener('click', closeModal(), false);
+    
+  }
+  showModal(){
+    modal.classList.add('showModal')
+    cartOverlay.classList.add('transparentBcg');
+  }
+  closeModal(){
+    modal.classList.remove('showModal')
+    cartOverlay.classList.remove('transparentBcg');
+  }
+  
+  
   getBagButtons(){//get all buttons in each product
     const buttons = [...document.querySelectorAll('.bag-btn')];
     buttons.forEach(button => {
@@ -90,11 +122,12 @@ class UI {
           // display cart item
           this.addCartItem(cartItem);
           //show the cart
-          this.showCart();          
-        });
-      }        
-    }); 
+          this.showCart();        
+        });        
+      }       
+    });   
   }
+  
   setCartValues(cart){
     let tempTotal = 0;
     let itemsTotal = 0;
@@ -128,14 +161,16 @@ class UI {
   showCart(){
     cartOverlay.classList.add('transparentBcg');
     cartDOM.classList.add('showCart');
-  }
+  };  
   setupApp() {
     cart = Storage.getCart();
     this.setCartValues(cart);
     this.populateCart(cart);
     cartBtn.addEventListener('click', this.showCart);
     closeCartBtn.addEventListener('click', this.hideCart);
-  }
+    cartOverlay.addEventListener('click', this.hideCart);   
+    closeModalBtn.addEventListener('click', this.closeModal); 
+  }  
   populateCart(cart){
     cart.forEach(item => this.addCartItem(item));
   };
@@ -160,7 +195,7 @@ class UI {
         cartContent.removeChild(removeItem.parentElement.parentElement);
         const buttons = [...document.querySelectorAll('.bag-btn')];
         buttons.forEach(button => {
-          if (parseInt(button.dataser.id) === id ){
+          if (parseInt(button.dataset.id) === id ){
             button.disabled = false;
             button.innerHTML = `<i class='fas fa-shopping-cart'></i> add to cart`;
           }
@@ -197,6 +232,7 @@ class UI {
           });
         }
       }
+      
     });
   }
   clearCart() {
@@ -241,17 +277,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const products = new Products()
   //setup app
   ui.setupApp(); 
+  
 
   //get all products
   products
     .getProducts()
+    
     .then(products => {
     ui.displayProducts(products)
     Storage.saveProducts(products);
   })
   .then(() => {
     ui.getBagButtons();
-    ui.cartLogic();
+    ui.getShowButtons();
+    ui.cartLogic();   
+    ui.modalLogic();   
   });
 });
 
+// if (event.target.classList.contains('show')){
+//   //modal.classList.add('showModal')
+//   console.log('this')
+// }
