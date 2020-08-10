@@ -297,7 +297,7 @@ body {
 
 .show {
   position: absolute;
-  top: 80%;
+  top: 85%;
   right: 0;
   background: var(--primaryColor);
   border: none;
