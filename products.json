@@ -4,6 +4,7 @@
       "sys": { "id": "1" },
       "fields": {
         "title": "Z490 Aorus Xtreme Waterforce",
+        "description": "Intel® Z490 AORUS Motherboard with 16+1 Phases Digital VRM, AORUS All-In-One Monoblock",
         "price": 178.95,
         "image": { "fields": { "file": { "url": "./images/product-1.jpeg" } } }
       }
@@ -11,7 +12,8 @@
     {
       "sys": { "id": "2" },
       "fields": {
-        "title": "B550 AORUS MASTER",
+        "title": "AORUS GeForce® RTX 2080",
+        "description": "Gigabyte Gv-R57XTGAMING OC-8GD Radeon Rx 5700 Xt Gaming OC 8G tarjeta gráfica",
         "price": 226.99,
         "image": { "fields": { "file": { "url": "./images/product-2.jpeg" } } }
       }
@@ -19,7 +21,8 @@
     {
       "sys": { "id": "3" },
       "fields": {
-        "title": "X399 GAMING PRO CARBONO AC",
+        "title": "Intel Core i9-10900X",
+        "description": "Procesador Intel Core i9-10900X de sobremesa 10 núcleos de hasta 4,7 GHz",
         "price": 48.95,
         "image": { "fields": { "file": { "url": "./images/product-3.jpeg" } } }
       }
@@ -27,7 +30,8 @@
     {
       "sys": { "id": "4" },
       "fields": {
-        "title": "MPG B550 GAMING EDGE WIFI",
+        "title": "AMD Ryzen 9 3900Xh",
+        "description": "AMD Ryzen 9 3900X 12-core, 24-thread desbloqueado",
         "price": 150.78,
         "image": { "fields": { "file": { "url": "./images/product-4.jpeg" } } }
       }
@@ -35,7 +39,8 @@
     {
       "sys": { "id": "5" },
       "fields": {
-        "title": "Intel Core i7-9700K",
+        "title": "G.SKILL TridentZ RGB Series 16GB",
+        "description": "G.SKILL TridentZ RGB Series 16GB (2 x 8GB) 288-Pin DDR43200MHz",
         "price": 299.99,
         "image": { "fields": { "file": { "url": "./images/product-5.jpeg" } } }
       }
@@ -43,7 +48,8 @@
     {
       "sys": { "id": "6" },
       "fields": {
-        "title": "Procesador Intel Core i9-10900X",
+        "title": "MSI Gaming GeForce RTX 2080",
+        "description": "MSI Gaming GeForce RTX 2080 Super 8GB GDRR6 256",
         "price": 489.99,
         "image": { "fields": { "file": { "url": "./images/product-6.jpeg" } } }
       }
@@ -51,7 +57,8 @@
     {
       "sys": { "id": "7" },
       "fields": {
-        "title": "AMD Ryzen 9 3900Xh",
+        "title": "EVGA Supernova 550w",
+        "description": "EVGA Supernova 220-G2-0550-Y1 Fuente de alimentación totalmente modular",
         "price": 10.99,
         "image": { "fields": { "file": { "url": "./images/product-7.jpeg" } } }
       }
@@ -59,7 +66,8 @@
     {
       "sys": { "id": "8" },
       "fields": {
-        "title": "AMD Ryzen Threadripper 3970X",
+        "title": "Corsair Dominator Platinum RGB",
+        "description": "Corsair Dominator Platinum RGB - Memoria de sobremesa, Negro",
         "price": 80.55,
         "image": { "fields": { "file": { "url": "./images/product-8.jpeg" } } }
       }

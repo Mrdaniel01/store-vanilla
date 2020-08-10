@@ -55,6 +55,13 @@ body {
   border-radius: 30%;
   color: var(--mainWhite);
 }
+
+@media screen and (max-width: 768px){
+  .navbar-center img {
+    width: 60%;
+    
+  }
+}
 /* --------------- End of Navbar ---------------- */
 /* --------------- Hero ---------------- */
 .hero {
@@ -75,6 +82,11 @@ body {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   margin: 1rem 0;
+}
+@media screen and (max-width: 768px){
+  .banner-title {
+    font-size: 2rem;
+  }
 }
 .banner-btn {
   padding: 1rem 3rem;
@@ -294,11 +306,34 @@ body {
   margin-left: 1.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .modal-items {
   width: 100%;
   display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px){
+  .modal-items {
+    display: block;
+    margin: 0 auto;
+  }
+  .modal-details {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .modal-title,
+.modal-description {
+  font-size: 1rem;
+}
+.modal-img {
+  width: 70%;
+  justify-self: center;
+}
+
 }
 
 .modal-title,

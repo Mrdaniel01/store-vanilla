@@ -31,10 +31,10 @@ class Products {
 
       let products = data.items;
       products = products.map( item => { //i receive and object from my fake API
-        const { title, price } = item.fields;
+        const { title, description, price } = item.fields;
         const { id } = item.sys;
         const image = item.fields.image.fields.file.url; 
-        return { title,price,id,image } //then i return and organized object
+        return { title,description,price,id,image } //then i return and organized object
       })
       return products;
     } catch (error) {
@@ -65,7 +65,7 @@ class UI {
           </button>
         </div>
         <h3>${product.title}</h3>
-        <h4>${product.price}</h4>
+        <h4>$${product.price}</h4>
       </article>
       <!--end single product-->
       `;
@@ -104,7 +104,7 @@ class UI {
           <h3 class="modal-title">${item.title} </h3>
         </li>
         <li>
-          <p class="modal-description">Description</p>
+          <p class="modal-description">${item.description}</p>
         </li>
         <li>
           <h4 class="modal-price">
@@ -136,7 +136,7 @@ class UI {
       if (inCart) {
         button.innerText = 'In Cart';
         button.disabled = true;
-      } else {
+      }
         button.addEventListener('click', (event) => { 
           //cahnge my button state if it is in my cart
           event.target.innerText = 'In Cart';
@@ -154,8 +154,7 @@ class UI {
           this.addCartItem(cartItem);
           //show the cart
           this.showCart();        
-        });        
-      }       
+        });  
     });   
   }  
   setCartValues(cart){
@@ -311,8 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //get all products
   products
-    .getProducts()
-    
+    .getProducts()    
     .then(products => {
     ui.displayProducts(products);
     Storage.saveProducts(products);
