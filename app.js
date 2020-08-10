@@ -75,7 +75,7 @@ class UI {
 
   getShowButtons(){    
     const buttonsShow = [...document.querySelectorAll('.show')];
-    buttonsShow.forEach(buttonShow => {
+    buttonsShow.forEach(buttonShow  => {
       let id = buttonShow.dataset.id;      
       buttonShow.addEventListener('click', () => {
       let modalItem = { ...Storage.getProduct(id), amount: 1};
@@ -121,7 +121,9 @@ class UI {
   }
   closeModal(){
     modalContainer = [];
-    modal.removeChild()
+    var childModal = modal.children;
+    location.reload()
+    //modal.removeChild(childModal)
     console.log(modalContainer)
     modal.classList.remove('showModal')
     cartOverlay.classList.remove('transparentBcg');
